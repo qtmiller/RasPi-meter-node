@@ -1,12 +1,11 @@
 import os
 
 class Block(object):
-    recent_tag_points = []
-    input_blocks = []
-    output_blocks = []
-    recent_tp_limit = 10
     
     def __init__(self):
+        self.recent_tag_points = []
+        self.input_blocks = []
+        self.output_blocks = []
         self.recent_tp_limit = 10
         return
     
@@ -20,8 +19,6 @@ class Block(object):
 
     def recv_tag_point(self, tag_point):
         self.recent_tag_points.append(tag_point)
-        print('loop: ')
-        print(self.recent_tag_points)
         while len(self.recent_tag_points) > self.recent_tp_limit:
             self.recent_tag_points.remove(self.recent_tag_points[1])
         return None

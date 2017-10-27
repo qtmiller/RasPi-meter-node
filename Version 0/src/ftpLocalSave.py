@@ -5,6 +5,7 @@ from outputBlock import OutputBlock
 class FtpLocalSave(OutputBlock):
 
     def __init__(self):
+        super().__init__()
         return
 
     def recv_tag_point(self, tag_point):
