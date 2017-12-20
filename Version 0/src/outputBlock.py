@@ -21,3 +21,19 @@ class OutputBlock(Block):
                        + str(tag_point.value) + '\n')
         csv_file.close()
         return
+
+    def get_last_tag_point(self, tag_point):
+        if (tag_point.type == str):
+            tag_point = TagPoint(tag_point,"","")
+        csv_file = None
+        try:
+            with open(self.local_backup_filepath(tag_point)) as f:
+                f.seek(-2, os.SEEK_END)
+                while (f.read(1) != b"\n"):
+                    f.seek(-2,os.SEEK_CUR)
+                last = f.readline()
+                split = last.split(',')
+                print(split[-1])
+        except Exception:
+            return 0
+        

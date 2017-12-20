@@ -30,6 +30,15 @@ class Block(object):
         self.recent_tag_points.append(tag_point)
         return None
 
+    def get_param_dict(self):
+        param_dict = {}
+        param_dict['recent_tp_limit'] = self.recent_tp_limit
+        return None
+
+    def set_param_dict(self, param_dict):
+        if (param_dict['recent_tp_limit'] != None):
+            recent_tp_limit = param_dict['recent_tp_limit']
+
     def connect_input(self, block_object):
         # remove input if already connected
         self.disconnect_input(block_object)
@@ -66,6 +75,7 @@ class Block(object):
 
     def local_backup_filepath(self, tag_point):
         script_dir = os.path.dirname(os.path.realpath('__file__'))
-        tag_path = '../tags/' + tag_point.tagname
-        filepath = os.path.join(script_dir, tag_path, 'records.csv')
+        parent_dir = script_dir.rstrip('/src')
+        tag_path = 'tags/' + tag_point.tagname
+        filepath = os.path.join(parent_dir, tag_path, 'records.csv')
         return filepath
