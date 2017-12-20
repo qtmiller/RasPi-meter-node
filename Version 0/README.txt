@@ -5,3 +5,6 @@ Project goal:
 
 Authors:
 	Quinn Miller - Energy Engineer
+
+Use:
+	Edit setup.py using a notepad app then run it.
