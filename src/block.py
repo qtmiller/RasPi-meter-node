@@ -23,8 +23,11 @@ class Block(object):
             self.recent_tag_points.remove(self.recent_tag_points[1])
         return None
 
-    def get_last_tag_point(self):
-        return self.recent_tag_points[-1]
+    def get_last_tag_point(self, tag_point):
+        if (len(self.recent_tag_points)>0):
+            return self.recent_tag_points[-1]
+        else:
+            return self.output_blocks[-1].get_last_tag_point(tag_point)
 
     def set_last_tag_point(self, tag_point):
         self.recent_tag_points.append(tag_point)
@@ -76,6 +79,7 @@ class Block(object):
     def local_backup_filepath(self, tag_point):
         script_dir = os.path.dirname(os.path.realpath('__file__'))
         parent_dir = script_dir.rstrip('/src')
-        tag_path = 'tags/' + tag_point.tagname
+        tag_path = 'tag/' + tag_point.tagname
         filepath = os.path.join(parent_dir, tag_path, 'records.csv')
+        os.makedirs(os.path.dirname(filepath), exist_ok=True)
         return filepath

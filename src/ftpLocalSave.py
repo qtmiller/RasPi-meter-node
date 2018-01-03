@@ -10,8 +10,6 @@ class FtpLocalSave(OutputBlock):
 
     def recv_tag_point(self, tag_point):
         super().recv_tag_point(tag_point)
-        # save to ftp folder
-        print("saving to ftp")
         super().save_to_csv(self.local_ftp_filepath(tag_point), tag_point)
         return
 
@@ -20,4 +18,5 @@ class FtpLocalSave(OutputBlock):
         parent_dir = script_dir.rstrip('/src')
         tag_path = 'ftp/' + tag_point.tagname
         filepath = os.path.join(parent_dir, tag_path, 'records.csv')
+        os.makedirs(os.path.dirname(filepath), exist_ok=True)
         return filepath

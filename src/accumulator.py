@@ -11,9 +11,8 @@ class Accumulator(ProcessBlock):
 
     def recv_tag_point(self, tag_point):
         if len(self.recent_tag_points) == 0:
-            tp = copy.copy(tag_point)
-            tp.value = super().load_last_rec_value(tag_point)
-            self.recent_tag_points.append(tp)
+            self.recent_tag_points.append( \
+                super().get_last_tag_point(copy.copy(tag_point)))
         accu_tag_point = copy.copy(tag_point)
         accu_tag_point.value = (self.recent_tag_points[-1].value +
                                     tag_point.value)
