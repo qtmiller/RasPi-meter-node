@@ -1,0 +1,6 @@
+# folder structure is kept to demonstrate structure
+
+# ignore all files in this directory
+*
+# except this file
+!.gitignore

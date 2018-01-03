@@ -1,3 +1,5 @@
 # ignore any changes to the setup.py file
-
 setup.py
+
+# ignore any block dependent strucutres
+ftp/
