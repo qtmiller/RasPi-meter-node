@@ -1,4 +1,5 @@
 import os
+import time
 
 class Block(object):
     
@@ -83,3 +84,6 @@ class Block(object):
         filepath = os.path.join(parent_dir, tag_path, 'records.csv')
         os.makedirs(os.path.dirname(filepath), exist_ok=True)
         return filepath
+
+    def current_time(self):
+        return time.localtime(time.time())
