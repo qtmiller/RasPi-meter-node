@@ -6,3 +6,4 @@
 2. Configure the Setup.py script
 3. Create a periodic cron job for ftp upload
 4. Create startup job to run Setup.py on startup
+5. Open the terminal (command prompt) and type "sudo reboot"

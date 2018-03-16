@@ -1,0 +1,9 @@
+wfftp.westfrasertimber.ca\FTP
+WFFTP
+west1955fraser
+wfftp\Incoming\Raspi\WLK-001
+
+WFFTP.westfraser.com
+WFFTP
+west1955fraser
+wfftp\Incoming\Raspi\WLK-001
