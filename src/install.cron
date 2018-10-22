@@ -2,5 +2,5 @@
 @reboot (cd "/home/pi/Documents/RasPi-meter-node-master/Version 0/" || exit 1; /usr/bin/python3 ./setup.py) >> /var/log/Raspi/setup_pi.log 2>&1
 
 ## Run ftp update script every 1 hour
-#*/1 * * * * (cd "/home/pi/Documents/RasPi-meter-node-master/Version 0/src/" || exit 1; /usr/bin/python3 ./ftpSync.py) >> /var/log/Raspi/ftpSync.log 2>&1
-* */1 * * * (cd "/home/pi/Documents/RasPi-meter-node-master/Version 0/src/" || exit 1; /usr/bin/python3 ./ftpSync.py) >> /var/log/Raspi/ftpSync.log 2>&1
+*/1 * * * * (cd "/home/pi/Documents/RasPi-meter-node-master/Version 0/src/" || exit 1; /usr/bin/python3 ./ftpSync.py) >> /var/log/Raspi/ftpSync.log 2>&1
+#* */1 * * * (cd "/home/pi/Documents/RasPi-meter-node-master/Version 0/src/" || exit 1; /usr/bin/python3 ./ftpSync.py) >> /var/log/Raspi/ftpSync.log 2>&1
